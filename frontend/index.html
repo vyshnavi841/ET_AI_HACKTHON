@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counterfeit Currency Identification Agent | Digital Public Safety</title>
+    <!-- Google Fonts: Outfit, Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Cyber Grid Background -->
+    <div class="cyber-bg">
+        <div class="grid-lines"></div>
+        <div class="ambient-glow glow-1"></div>
+        <div class="ambient-glow glow-2"></div>
+        <div class="ambient-glow glow-3"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Top Navigation Bar -->
+        <header class="top-nav">
+            <div class="brand">
+                <div class="shield-logo">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>
+                </div>
+                <div class="brand-text">
+                    <h1>COUNTERFEIT<span>AGENT</span></h1>
+                    <p>AI Digital Public Safety Currency Verification Platform</p>
+                </div>
+            </div>
+            
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-tab="scanner-tab">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                    <span>Live Scanner HUD</span>
+                </button>
+                <button class="nav-tab" data-tab="analysis-tab">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    <span>Microprint & UV Analysis</span>
+                </button>
+                <button class="nav-tab" data-tab="command-tab">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                    <span>Seizure GeoMap</span>
+                </button>
+                <button class="nav-tab" data-tab="audit-tab">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    <span>Audit & Registry</span>
+                </button>
+            </div>
+
+            <div class="system-status">
+                <span class="status-indicator"></span>
+                <span class="status-text">AI ENGINE ACTIVE</span>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Viewport -->
+        <main class="content-viewport">
+            
+            <!-- TAB 1: LIVE SCANNER HUD -->
+            <section id="scanner-tab" class="tab-pane active">
+                <div class="grid-layout scanner-layout">
+                    <!-- Left Control Panel -->
+                    <div class="panel control-panel glass-card">
+                        <div class="panel-header">
+                            <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg> Target Configuration</h3>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Target Denomination Template</label>
+                            <div class="select-wrapper">
+                                <select id="template-select" class="custom-select">
+                                    <option value="USD_100">🇺🇸 $100 USD Note (Benjamin Franklin)</option>
+                                    <option value="USD_50">🇺🇸 $50 USD Note (Ulysses S. Grant)</option>
+                                    <option value="INR_500">🇮🇳 ₹500 INR Note (Mahatma Gandhi)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Select Test Sample Preset</label>
+                            <div class="preset-grid">
+                                <button class="btn-preset active" data-sample="usd_100_genuine">
+                                    <span class="dot genuine"></span>
+                                    <div class="preset-info">
+                                        <strong>$100 USD Authentic</strong>
+                                        <small>Clean microprint & thread</small>
+                                    </div>
+                                </button>
+                                <button class="btn-preset" data-sample="usd_100_counterfeit">
+                                    <span class="dot counterfeit"></span>
+                                    <div class="preset-info">
+                                        <strong>$100 USD Fake</strong>
+                                        <small>Blurry microprint & flag</small>
+                                    </div>
+                                </button>
+                                <button class="btn-preset" data-sample="usd_50_suspect">
+                                    <span class="dot suspect"></span>
+                                    <div class="preset-info">
+                                        <strong>$50 USD Suspect</strong>
+                                        <small>Low UV luminescence</small>
+                                    </div>
+                                </button>
+                                <button class="btn-preset" data-sample="inr_500_counterfeit">
+                                    <span class="dot counterfeit"></span>
+                                    <div class="preset-info">
+                                        <strong>₹500 INR Fake</strong>
+                                        <small>Blacklisted serial match</small>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Or Upload Banknote Image</label>
+                            <div class="dropzone" id="image-dropzone">
+                                <input type="file" id="file-input" accept="image/*" class="file-input-hidden">
+                                <div class="dropzone-content">
+                                    <div class="upload-icon">
+                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                    </div>
+                                    <p>Drop scan image or <span>Browse File</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Field Operator Credentials</label>
+                            <div class="input-row">
+                                <input type="text" id="operator-id" value="OFFICER_482" placeholder="Operator ID">
+                                <input type="text" id="device-id" value="FIELD_POS_01" placeholder="Device ID">
+                            </div>
+                        </div>
+
+                        <button id="btn-run-scan" class="btn-primary-action glowing-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                            RUN AI INSPECTION SCAN
+                        </button>
+                    </div>
+
+                    <!-- Right Scanner HUD Display -->
+                    <div class="panel hud-panel glass-card">
+                        <div class="panel-header flex-between">
+                            <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg> High-Precision Visual Reticle HUD</h3>
+                            <div class="hud-status-tags">
+                                <span id="scan-latency" class="badge-tag cyber">LATENCY: 140ms</span>
+                                <span class="badge-tag live">LIVE RADAR</span>
+                            </div>
+                        </div>
+
+                        <div class="scanner-viewport">
+                            <!-- Radar sweep backdrop -->
+                            <div class="radar-sweep"></div>
+                            <div class="scan-reticle-overlay">
+                                <div class="corner top-left"></div>
+                                <div class="corner top-right"></div>
+                                <div class="corner bottom-left"></div>
+                                <div class="corner bottom-right"></div>
+                                <div class="target-crosshair"></div>
+                                <div class="laser-scanner-line" id="laser-line"></div>
+                            </div>
+                            <img id="main-scan-img" src="/api/v1/sample/usd_100_genuine" alt="Banknote Scan Viewport">
+                        </div>
+
+                        <!-- Live Verdict Card -->
+                        <div class="verdict-banner" id="verdict-banner">
+                            <div class="verdict-status genuine" id="verdict-status">
+                                <div class="verdict-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                </div>
+                                <div>
+                                    <span class="verdict-title">VERDICT: GENUINE</span>
+                                    <span class="verdict-score">94.5% Confidence Score</span>
+                                </div>
+                            </div>
+                            <div class="verdict-serial">
+                                <span class="label">SERIAL NUMBER OCR</span>
+                                <span class="serial-code" id="ocr-serial-code">KB10293847A</span>
+                                <span class="blacklist-badge clean" id="blacklist-badge">CLEAN DB RECORD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 2: MICROPRINT & UV ANALYSIS -->
+            <section id="analysis-tab" class="tab-pane">
+                <div class="grid-layout analysis-layout">
+                    <div class="panel glass-card interactive-card">
+                        <div class="panel-header">
+                            <h3>🔍 Microprint 10x Optical Detail</h3>
+                        </div>
+                        <div class="roi-view-box zoom-hover">
+                            <img id="microprint-crop-img" src="" alt="Microprint Detail Crop">
+                            <div class="zoom-lens"></div>
+                        </div>
+                        <div class="metric-meter">
+                            <div class="meter-label">
+                                <span>Microprint Sharpness & Gradient</span>
+                                <strong id="microprint-score-text">95.0%</strong>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill green" id="microprint-bar" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel glass-card interactive-card">
+                        <div class="panel-header">
+                            <h3>⚡ Simulated UV Spectrum Luminescence</h3>
+                        </div>
+                        <div class="roi-view-box glow-hover">
+                            <img id="uv-spectrum-img" src="" alt="UV Spectrum Image">
+                        </div>
+                        <div class="metric-meter">
+                            <div class="meter-label">
+                                <span>UV Fluorescent Response Match</span>
+                                <strong id="uv-score-text">92.0%</strong>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill green" id="uv-bar" style="width: 92%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel glass-card interactive-card">
+                        <div class="panel-header">
+                            <h3>🛡️ Security Thread Band Continuity</h3>
+                        </div>
+                        <div class="roi-view-box">
+                            <img id="thread-crop-img" src="" alt="Security Thread Crop">
+                        </div>
+                        <div class="metric-meter">
+                            <div class="meter-label">
+                                <span>Thread Metallic Continuity</span>
+                                <strong id="thread-score-text">96.0%</strong>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill green" id="thread-bar" style="width: 96%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel full-width glass-card">
+                        <div class="panel-header">
+                            <h3>🚨 Detected Anomaly & Forensic Audit Log</h3>
+                        </div>
+                        <ul class="anomalies-list" id="anomalies-list-container">
+                            <li class="clean"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> No physical print anomalies detected. High microprint line density verified.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 3: SEIZURE GEOMAP & COMMAND CENTER -->
+            <section id="command-tab" class="tab-pane">
+                <div class="grid-layout command-layout">
+                    <div class="panel map-panel glass-card">
+                        <div class="panel-header flex-between">
+                            <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg> National Counterfeit Seizure Map</h3>
+                            <div class="map-legend">
+                                <span class="legend-item red"><span class="pulse-dot red"></span> High Alert Zone (&gt;100)</span>
+                                <span class="legend-item amber"><span class="pulse-dot amber"></span> Medium Alert (30-100)</span>
+                                <span class="legend-item green"><span class="pulse-dot green"></span> Low Risk (&lt;30)</span>
+                            </div>
+                        </div>
+                        <div class="map-container" id="geomap-container">
+                            <svg id="usa-svg-map" viewBox="0 0 1000 500" class="svg-map">
+                                <rect width="1000" height="500" fill="#070b14" rx="10" />
+                                <g stroke="rgba(255,255,255,0.03)" stroke-width="1">
+                                    <path d="M 0 100 L 1000 100 M 0 200 L 1000 200 M 0 300 L 1000 300 M 0 400 L 1000 400" />
+                                    <path d="M 200 0 L 200 500 M 400 0 L 400 500 M 600 0 L 600 500 M 800 0 L 800 500" />
+                                </g>
+                                <g id="map-hotspots-group"></g>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="panel hotspots-list-panel glass-card">
+                        <div class="panel-header">
+                            <h3>🔥 Regional Risk Hotspots</h3>
+                        </div>
+                        <div class="hotspots-list" id="hotspots-list-container">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 4: AUDIT TRAIL & BLACKLIST -->
+            <section id="audit-tab" class="tab-pane">
+                <div class="kpi-grid">
+                    <div class="kpi-card glass-card hover-glow">
+                        <span class="kpi-label">TOTAL SCANS PROCESSED</span>
+                        <h2 class="kpi-value" id="kpi-total">1,482</h2>
+                        <span class="kpi-sub">⚡ Real-time edge telemetry</span>
+                    </div>
+                    <div class="kpi-card danger glass-card hover-glow">
+                        <span class="kpi-label">COUNTERFEITS INTERCEPTED</span>
+                        <h2 class="kpi-value" id="kpi-counterfeit">124</h2>
+                        <span class="kpi-sub">🛡️ Prevented $12,400 fraud</span>
+                    </div>
+                    <div class="kpi-card warning glass-card hover-glow">
+                        <span class="kpi-label">DETECTION RATE</span>
+                        <h2 class="kpi-value" id="kpi-rate">8.4%</h2>
+                        <span class="kpi-sub">🎯 High precision accuracy</span>
+                    </div>
+                    <div class="kpi-card info glass-card hover-glow">
+                        <span class="kpi-label">FLAGGED SERIALS IN DB</span>
+                        <h2 class="kpi-value" id="kpi-serials">48</h2>
+                        <span class="kpi-sub">🏛️ Secret Service & Interpol</span>
+                    </div>
+                </div>
+
+                <div class="grid-layout tables-layout">
+                    <!-- Blacklist Management Table -->
+                    <div class="panel glass-card">
+                        <div class="panel-header flex-between">
+                            <h3>Flagged Serial Numbers Registry</h3>
+                            <button class="btn-sm glowing-btn" id="btn-add-serial-modal">+ Add Flagged Serial</button>
+                        </div>
+                        <div class="table-wrapper">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Serial Number</th>
+                                        <th>Currency</th>
+                                        <th>Risk</th>
+                                        <th>Issuing Agency</th>
+                                        <th>Notes</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="blacklist-table-body">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Audit Trail Table -->
+                    <div class="panel glass-card">
+                        <div class="panel-header">
+                            <h3>Field Inspection Audit Trail</h3>
+                        </div>
+                        <div class="table-wrapper">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Scan ID</th>
+                                        <th>Timestamp</th>
+                                        <th>Denomination</th>
+                                        <th>Verdict</th>
+                                        <th>Score</th>
+                                        <th>Operator</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="audit-table-body">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for adding flagged serial -->
+    <div class="modal-overlay" id="add-serial-modal">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h3>Register Blacklisted Serial Number</h3>
+                <button class="btn-close" id="btn-close-modal">&times;</button>
+            </div>
+            <form id="add-serial-form">
+                <div class="form-group">
+                    <label>Serial Number</label>
+                    <input type="text" id="modal-serial" required placeholder="e.g. KB77391204B">
+                </div>
+                <div class="form-group">
+                    <label>Currency & Denomination</label>
+                    <div class="input-row">
+                        <select id="modal-currency">
+                            <option value="USD">USD ($)</option>
+                            <option value="INR">INR (₹)</option>
+                            <option value="EUR">EUR (€)</option>
+                        </select>
+                        <input type="text" id="modal-denom" value="100" placeholder="Denomination">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Risk Level</label>
+                    <select id="modal-risk">
+                        <option value="CRITICAL">CRITICAL (Known Syndicate Plate)</option>
+                        <option value="HIGH">HIGH (Multi-State Seizure)</option>
+                        <option value="MEDIUM">MEDIUM (Suspicious Print Batch)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Issuing Agency</label>
+                    <input type="text" id="modal-agency" value="Federal Reserve Police" placeholder="Agency Name">
+                </div>
+                <div class="form-group">
+                    <label>Notes & Seizure History</label>
+                    <textarea id="modal-notes" rows="3" placeholder="Case details or operation reference..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary-action glowing-btn">Add to National Blacklist Registry</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
