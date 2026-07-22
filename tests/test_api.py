@@ -3,10 +3,13 @@ from fastapi.testclient import TestClient
 from backend.main import app
 from backend.database import init_db
 
+from backend.sample_generator import generate_sample_banknotes
+
 client = TestClient(app)
 
 def setup_module():
     init_db()
+    generate_sample_banknotes()
 
 def test_root_endpoint():
     response = client.get("/")

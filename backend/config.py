@@ -21,7 +21,7 @@ DENOMINATION_TEMPLATES = {
         "name": "$100 USD Note (Benjamin Franklin)",
         "denomination": "100",
         "currency": "USD",
-        "serial_pattern": r"^[A-L]{1}[0-9]{8}[A-Z]{1}$",
+        "serial_pattern": r"^[A-Z]{2}[0-9]{8}[A-Z]{1}$",
         "serial_example": "KB77391204B",
         "microprint_text": "THE UNITED STATES OF AMERICA 100 USA",
         "microprint_roi": [0.15, 0.45, 0.85, 0.55], # y1, x1, y2, x2 ratios
@@ -34,7 +34,7 @@ DENOMINATION_TEMPLATES = {
         "name": "$50 USD Note (Ulysses S. Grant)",
         "denomination": "50",
         "currency": "USD",
-        "serial_pattern": r"^[A-L]{1}[0-9]{8}[A-Z]{1}$",
+        "serial_pattern": r"^[A-Z]{2}[0-9]{8}[A-Z]{1}$",
         "serial_example": "MB12948572A",
         "microprint_text": "FIFTY USA 50",
         "microprint_roi": [0.20, 0.40, 0.80, 0.50],
